@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Turret+Road');
+@import '../index.css';
+
+fieldset{
+    width: 80%;
+    height: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -45%);
+    transform: translate(-50%, -45%);
+    z-index: 2;
+    background-color: rgba(20,17,20, 0.8);
+    border: 2px solid rgb(248, 247, 218);
+    border-radius: 5px;
+    text-align: center;
+    backdrop-filter: blur(1px);
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    legend {
+        color: var(--color-black);
+        font-size: 4rem;
+        font-weight: 200;
+        padding-bottom: 0.5rem;
+        font-family: 'Turret Road', sans-serif;
+        font-style: italic;
+        font-weight: 900;
+    }
+}

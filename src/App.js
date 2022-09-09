@@ -1,6 +1,9 @@
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import styles from './app.module.scss';
+import Navsystem from './components/Navsystem';
+import Proxylist from "./components/Proxylist";
 
 const App = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -16,73 +19,80 @@ const App = () => {
   }, []);
 
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        fpsLimit: 120,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "grab",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 150,
-              line_linked: {
-                opacity: 1,
+    <>
+    <div className={styles.background}/>
+      <Navsystem />
+      <Proxylist/>
+    
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        className={styles.particles}
+        loaded={particlesLoaded}
+        options={{
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "grab",
               },
-            }
-          },
-        },
-        particles: {
-          color: {
-            value: "#000000",
-          },
-          links: {
-            color: "#000000",
-            distance: 150,
-            enable: true,
-            opacity: 0.2,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            directions: "none",
-            enable: true,
-            outModes: {
-              default: "bounce",
+              resize: true,
             },
-            random: false,
-            speed: 0.5,
-            straight: false,
+            modes: {
+              grab: {
+                distance: 150,
+                line_linked: {
+                  opacity: 1,
+                },
+              }
+            },
           },
-          number: {
-            density: {
+          particles: {
+            color: {
+              value: "#fff",
+            },
+            links: {
+              color: "#fff",
+              distance: 150,
               enable: true,
-              area: 400,
+              opacity: 0.2,
+              width: 1,
             },
-            value: 90,
+            collisions: {
+              enable: true,
+            },
+            move: {
+              directions: "none",
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              speed: 0.5,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 400,
+              },
+              value: 90,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 1.5},
+            },
           },
-          opacity: {
-            value: 0.5,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 1.5},
-          },
-        },
-        detectRetina: true,
-      }}
-    />
+          detectRetina: true,
+        }}
+      />
+      </>
   );
 };
 

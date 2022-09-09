@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Turret+Road');
+
+header {
+    transition: all 0.4s ease;
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
+
+  // .top {
+  //   top: 0px;
+  // }
+
+  // .down {
+  //   top: -80px;
+  // }
+
+  // .up {
+  //   top: 0px;
+  //   display: flex;
+  //   justify-content: flex-end;
+  //   align-items: center;
+  //   padding: 30px 10%;
+  //   width: 100%;
+  //   height: 40px;
+  //   box-shadow:  0 10px 30px -10px rgba(58, 41, 4, 0.7);
+  //   backdrop-filter: blur(10px);
+  // }
+
+  .logo {
+    cursor: pointer;
+    order: 3;
+    margin-right: auto;
+    img {
+      width:60px; /* you can use % */
+      height: auto;
+    }
+    order: 1;
+  }
+
+  .logo img {
+    width:40px; /* you can use % */
+    height: auto;
+    animation: glitch 5s infinite steps(1);
+}
+
+@keyframes glitch {
+    0%, 100% {
+        background: url('../images/fyde.png');
+        background-size: cover;      
+    }
+
+    92.5% {
+        background: url('../images/fyde-glitch-30.png');
+        background-size: cover; 
+        opacity: 1;     
+    }
+
+    95% {
+        background: url('../images/fyde-glitch-60.png');
+        background-size: cover;
+        opacity: 0;
+    }
+
+    97.5% {
+        background: url('../images/fyde-glitch-80.png');
+        background-size: cover;   
+        opacity: 1;        
+    }
+}
+  
+  nav {
+    order: 2;
+  }
+  
+  .nav__links a {
+    font-family: "Turret Road", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+
+
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li:nth-child(1) {
+    padding: 0 20px 0 0;
+  }
+  
+  .nav__links a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav__links li a::before,
+  .nav__links li a::after {
+   content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  .nav__links li a::before {
+    background: rgba(248, 247, 218, 0.5);
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .nav__links li a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: rgb(248, 247, 218);
+  }
+  
+  .nav__links li a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  .nav__links li a:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .nav__links li a span {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .nav__links  li a:hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
+
+  .wip {
+    position: relative;
+    z-index: 10;
+    width: 60px; /* you can use % */
+    height: auto;
+    transform: rotate(-15deg);
+    left: 50%;
+    top: -15%;
+    
+  }
+  
+  .noLink {
+    font-family: "Turret Road", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
