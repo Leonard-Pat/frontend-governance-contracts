@@ -6,7 +6,8 @@ import styles from './proxylist.module.scss';
 function Proxylist() {
     return (
             <fieldset>
-                <legend><span className={styles.text}data-text="Proxy">Proxy </span>Management</legend>
+                <legend><span className={styles.text}data-text="Proxy">Voting </span>Management</legend>
+                <AddProxy/>
                 <Proxycard/>
                 <Proxycard/>
             </fieldset>

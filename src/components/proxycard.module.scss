@@ -1,6 +1,7 @@
+@import '../index.css';
 .container {
     background-color: rgba(20,17,20, 0.8);
-    border: 1px solid rgb(248, 247, 218);
+    border: 1px solid var(--color-offwhite);
     border-radius: 5px;
     text-align: center;
     backdrop-filter: blur(1px);
@@ -9,5 +10,20 @@
     margin-top: 10px;
     margin-left: 3%;
     margin-right: 3%;
+    display: flex;
+    align-items: center;
     
+}
+
+.coin {
+    width: 45px;
+    height: auto;
+    margin-left: 4%;
+}
+
+.coinName {
+    margin-top: 10px;
+    margin-left: 30px;
+    font-family: 'Turret Road', sans-serif;
+    color: #83ddbc;
 }

@@ -1,10 +1,25 @@
-.btn {
+@import '../index.css';
+
+.text {
+    cursor: pointer;
     position: relative;
-    top: 3%;
-    border-radius: 50%;
-    border: 1px solid rgb(248, 247, 218);
+    left: 3%;
+    border: 1px solid var(--color-offwhite);
     padding: 5px;
-    font-size: 31px;
-    height: 200px;
-    width: 200px;
+    font-size: 20px;
+    height: 8%;
+    width: 25%;
+    color:var(--color-offwhite);
+    margin-top: 10px;
+    p {
+        position: relative;
+        top: 12%;
+    }
 }
+
+.text:hover{
+    background-color: var(--color-offwhite);
+    color: var(--color-dark);
+}
+
+

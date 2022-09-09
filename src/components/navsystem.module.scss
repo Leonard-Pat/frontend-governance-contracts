@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Turret+Road');
+@import '../index.css';
 
 header {
     transition: all 0.4s ease;
@@ -116,7 +116,7 @@ header {
     left: 0;
   }
   .nav__links li a::before {
-    background: rgba(248, 247, 218, 0.5);
+    background: rgb(248, 247, 218);
     height: 2px;
     bottom: 0;
     transform-origin: 100% 50%;
@@ -130,7 +130,7 @@ header {
     transform-origin: 100% 50%;
     transform: translate3d(200%, 0, 0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-    color: rgb(248, 247, 218);
+    color: #83ddbc;
   }
   
   .nav__links li a:hover::before {
