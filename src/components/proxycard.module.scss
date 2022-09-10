@@ -12,8 +12,19 @@
     margin-right: 3%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
     
 }
+
+.container div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    margin-right: auto;
+    
+}   
 
 .coin {
     width: 45px;
@@ -26,4 +37,16 @@
     margin-left: 30px;
     font-family: 'Turret Road', sans-serif;
     color: #83ddbc;
+    letter-spacing: 2px;
+}
+
+.container div:nth-child(2){
+    margin-right: 50%;
+    color:red;
+}
+
+
+.container div:nth-child(3){
+    margin-right: 3%;
+    color:red;
 }

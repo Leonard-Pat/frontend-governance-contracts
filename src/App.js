@@ -2,7 +2,7 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 import styles from './app.module.scss';
-import Navsystem from './components/Navsystem';
+import Navsystem from './components/Navbar/Navsystem';
 import Proxylist from "./components/Proxylist";
 
 const App = () => {
@@ -21,9 +21,6 @@ const App = () => {
   return (
     <>
     <div className={styles.background}/>
-      <Navsystem />
-      <Proxylist/>
-    
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -92,6 +89,9 @@ const App = () => {
           detectRetina: true,
         }}
       />
+      <Navsystem />
+      <Proxylist/>
+    
       </>
   );
 };

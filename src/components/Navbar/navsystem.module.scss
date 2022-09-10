@@ -1,4 +1,4 @@
-@import '../index.css';
+@import '../../index.css';
 
 header {
     transition: all 0.4s ease;
@@ -52,24 +52,24 @@ header {
 
 @keyframes glitch {
     0%, 100% {
-        background: url('../images/fyde.png');
+        background: url('../../images/fyde.png');
         background-size: cover;      
     }
 
     92.5% {
-        background: url('../images/fyde-glitch-30.png');
+        background: url('../../images/fyde-glitch-30.png');
         background-size: cover; 
         opacity: 1;     
     }
 
     95% {
-        background: url('../images/fyde-glitch-60.png');
+        background: url('../../images/fyde-glitch-60.png');
         background-size: cover;
         opacity: 0;
     }
 
     97.5% {
-        background: url('../images/fyde-glitch-80.png');
+        background: url('../../images/fyde-glitch-80.png');
         background-size: cover;   
         opacity: 1;        
     }
@@ -96,6 +96,7 @@ header {
   
   .nav__links li {
     padding: 0px 20px;
+    margin-top: 7px;
   }
   
   .nav__links li:nth-child(1) {
@@ -169,4 +170,41 @@ header {
     overflow: hidden;
     position: relative;
     display: inline-block;
+  }
+
+  .buttonContainer {
+    // margin-top: -2px;
+    margin-left: 8px;
+    margin-right: -30px;
+  }
+
+  .buttonConnect{
+    background-color: transparent;
+    color: #edf0f1;
+    font-family: 'Turret Road', sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-color: var(--color-offwhite);
+  }
+
+  .buttonConnect:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+  }
+
+
+  .buttonDisconnect{
+    background-color: transparent;
+    color:  var(--color-teal);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-color: var(--color-teal);
+  }
+
+  .buttonDisconnect:hover{
+    cursor: pointer;
+    border-color: var(--color-offwhite);
+    color: var(--color-offwhite);
   }

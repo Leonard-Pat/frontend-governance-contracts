@@ -1,12 +1,11 @@
+@import '../../index.css';
+
 .modal {
-    position:absolute;
-    top: 0;
-    left: 0;
-    margin: auto;
-    padding: 0 2rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
+    height: 462px;
+    width: 963px;
+    border: 2px solid var(--color-offwhite);
+    background-color: var(--color-dark);
+    border-radius: 12px;  
     align-items: center;
     color: blue;
   }

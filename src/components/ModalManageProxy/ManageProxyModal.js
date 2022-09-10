@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Backdrop from "../BackDrop/Backdrop";
-import styles from "./createproxy.module.scss"
+import styles from "./manageproxy.module.scss"
 
 const scale = {
   hidden: {
@@ -27,7 +27,7 @@ const scale = {
 };
   
 
-const CreateProxyModal = ({ handleClose }) => {
+const ManageProxyModal = ({ handleClose }) => {
 
     return (
       <Backdrop onClick={handleClose}>
@@ -47,4 +47,4 @@ const CreateProxyModal = ({ handleClose }) => {
   };
 
   
-  export default CreateProxyModal;
+  export default ManageProxyModal;

@@ -27,4 +27,5 @@ code {
 :root {
   --color-offwhite: rgb(248, 247, 218);
   --color-dark:rgb(20,17,20) ;
+  --color-teal:#83ddbc;
 }

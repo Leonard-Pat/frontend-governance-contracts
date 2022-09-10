@@ -1,19 +1,20 @@
-import {useState, AnimatePresence} from 'react';
+import {useState} from 'react';
 import styles from './addproxy.module.scss';
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import CreateProxyModal from './ModalCreateProxy/CreateProxyModal';
 
-function AddProxy() {
+function AddProxy(props) {
 
     const [modalOpen, setModalOpen] = useState(false);
 
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
     
+    props.func(modalOpen);
+
     return (
         <>
         <motion.div
-          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => (modalOpen ? close() : open())}
           className={styles.text}>
@@ -21,8 +22,12 @@ function AddProxy() {
               <p>Create New Proxy</p>
               
         </motion.div>
-        {modalOpen && <CreateProxyModal modalOpen={modalOpen} handleClose={close} />}
-        
+        <AnimatePresence
+            initial={false}
+            exitBeforeEnter={true}
+            onExitComplete={() => null}>
+            {modalOpen && <CreateProxyModal modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
         </>
     );
         
@@ -31,3 +36,4 @@ function AddProxy() {
 }
 
 export default AddProxy;
+
