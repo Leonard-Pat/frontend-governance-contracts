@@ -1,0 +1,70 @@
+@import '../../index.css';
+
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    border-right: solid 2px var(--color-offwhite);
+    div {
+        height: 25%;
+        cursor:pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div{
+        font-family: 'Turret Road', sans-serif;
+        color: var(--color-offwhite);
+        font-size: 25px;
+    }
+    div:hover{
+        background-color: var(--color-offwhite);
+            color: var(--color-dark);
+    }
+
+}
+
+
+
+.navbar :nth-child(1){
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom: 1px solid var(--color-offwhite);  
+}
+
+.navbar :nth-child(2){
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    border-top: 1px solid var(--color-offwhite);
+}
+
+.navbar :nth-child(3){
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-top: 1px solid var(--color-offwhite);
+}
+
+.navbar :nth-child(4){
+    position: absolute;
+    top: 75%;
+    width: 100%;
+    border-top: 1px solid var(--color-offwhite);
+    border-bottom-left-radius: 8px;
+}
+
+
+.tabView {
+    height:100%;
+    width: 80%;
+    margin-left: 20%;
+}

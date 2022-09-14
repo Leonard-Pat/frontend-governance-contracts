@@ -3,14 +3,12 @@ import styles from './addproxy.module.scss';
 import { motion, AnimatePresence } from "framer-motion"
 import CreateProxyModal from './ModalCreateProxy/CreateProxyModal';
 
-function AddProxy(props) {
+function AddProxy({setModal, modalOpen}) {
 
-    const [modalOpen, setModalOpen] = useState(false);
 
-    const close = () => setModalOpen(false);
-    const open = () => setModalOpen(true);
+    const close = () => setModal(false);
+    const open = () => setModal(true);
     
-    props.func(modalOpen);
 
     return (
         <>
@@ -24,7 +22,6 @@ function AddProxy(props) {
         </motion.div>
         <AnimatePresence
             initial={false}
-            exitBeforeEnter={true}
             onExitComplete={() => null}>
             {modalOpen && <CreateProxyModal modalOpen={modalOpen} handleClose={close}/>}
         </AnimatePresence>

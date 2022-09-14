@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import Backdrop from "../BackDrop/Backdrop";
 import styles from "./manageproxy.module.scss"
+import { useState, useEffect } from 'react';
+import { GiSplitCross } from "react-icons/gi";
+import SideNavigation from "./SideNavigation";
 
 const scale = {
   hidden: {
@@ -27,7 +30,8 @@ const scale = {
 };
   
 
-const ManageProxyModal = ({ handleClose }) => {
+const ManageProxyModal = ({ handleClose, coinName}) => {
+  console.log(coinName)
 
     return (
       <Backdrop onClick={handleClose}>
@@ -39,8 +43,11 @@ const ManageProxyModal = ({ handleClose }) => {
             animate="visible"
             exit="exit"
           >
-            <p>yo</p>
-            <button onClick={handleClose}>Close</button>
+            <SideNavigation/>
+            <h1>{coinName}</h1>
+            <button onClick={handleClose}> 
+            <GiSplitCross size={25} className={styles.icon} />
+            </button>
           </motion.div>
       </Backdrop>
     );

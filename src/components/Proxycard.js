@@ -1,48 +1,44 @@
-import {useState, useEffect} from 'react';
 import styles from './proxycard.module.scss';
 import { motion, AnimatePresence} from "framer-motion"
-import ManageProxyModal from "./ModalManageProxy/ManageProxyModal";
+import ManageProxyModal from './ModalManageProxy/ManageProxyModal';
+import { useState, useEffect } from 'react';
 
 
-function Proxycard(props, {text, icon}) {
+function Proxycard({setModal, modalOpen, icon, text}) {
 
-    const [modalOpen, setModalOpen] = useState(false);
+    const close = () => setModal(false);
+    const open = () => setModal(true);
 
-    const close = () => setModalOpen(false);
-    const open = () => setModalOpen(true);
-    
-    props.func(modalOpen);
 
     return (
         <>
         <motion.div  
         whileHover={{ scale: 1.02 }} 
         whileTap={{ scale: 0.98 }}
-        onClick={() => (modalOpen ? close() : open())}
+        onClick={() =>
+            (modalOpen ? close() : open())}
          className={styles.container}>
             <div>
                 <img src={icon} className={styles.coin} alt='Coin Logo'/>
                 <h1 className={styles.coinName}>{text}</h1>
             </div>
             <div>
-                    <h1>hey</h1>
+                    <h1>Price</h1>
             </div>
             <div>
-                    <h1>yo</h1>
+                    <h1>Manage</h1>
             </div>
 
         </motion.div>
         <AnimatePresence
-                initial={false}
-                exitBeforeEnter={true}
-                onExitComplete={() => null}>
-                {modalOpen && <ManageProxyModal modalOpen={modalOpen} handleClose={close}/>}
+            initial={false}
+            onExitComplete={() => null}>
+            {modalOpen && <ManageProxyModal modalOpen={modalOpen} handleClose={close} coinName={text}/>}
         </AnimatePresence>
         </>
     )
         
         
-
 }
 
 export default Proxycard;
