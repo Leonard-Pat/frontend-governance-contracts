@@ -10,6 +10,7 @@ function Proxylist() {
 
     const [modalOpenAddProxy, setModalOpenAddProxy] = useState(false);
     const [modalOpenManageProxy, setModalOpenManageProxy] = useState(false);
+    const [selectedProxy, setSelectedProxy] = useState()
     const coins = ['UNI', 'AAVE']
     const coinToIcon = {
         'UNI': uni,
@@ -28,7 +29,7 @@ function Proxylist() {
                 <legend><span className={styles.text}data-text="Proxy">Voting </span>Management</legend>
                 <AddProxy setModal={setModalOpenAddProxy} modalOpen={modalOpenAddProxy}/>
                 {coins.map((coin) =>    
-                        <Proxycard key={coin} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={coin} icon={coinToIcon[coin]}/>
+                        <Proxycard key={coin} proxy={selectedProxy} setProxy={setSelectedProxy} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={coin} icon={coinToIcon[coin]}/>
                     )}
             </fieldset>
     )

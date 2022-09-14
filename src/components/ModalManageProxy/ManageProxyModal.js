@@ -30,8 +30,7 @@ const scale = {
 };
   
 
-const ManageProxyModal = ({ handleClose, coinName}) => {
-  console.log(coinName)
+const ManageProxyModal = ({ handleClose, proxyName}) => {
 
     return (
       <Backdrop onClick={handleClose}>
@@ -44,7 +43,7 @@ const ManageProxyModal = ({ handleClose, coinName}) => {
             exit="exit"
           >
             <SideNavigation/>
-            <h1>{coinName}</h1>
+            <h1>{proxyName}</h1>
             <button onClick={handleClose}> 
             <GiSplitCross size={25} className={styles.icon} />
             </button>

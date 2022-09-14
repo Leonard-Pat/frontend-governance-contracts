@@ -4,10 +4,13 @@ import ManageProxyModal from './ModalManageProxy/ManageProxyModal';
 import { useState, useEffect } from 'react';
 
 
-function Proxycard({setModal, modalOpen, icon, text}) {
+function Proxycard({setModal, modalOpen, icon, text, proxy, setProxy}) {
 
     const close = () => setModal(false);
-    const open = () => setModal(true);
+    const open = () => {
+        setModal(true)
+        setProxy(text);
+    } 
 
 
     return (
@@ -33,7 +36,7 @@ function Proxycard({setModal, modalOpen, icon, text}) {
         <AnimatePresence
             initial={false}
             onExitComplete={() => null}>
-            {modalOpen && <ManageProxyModal modalOpen={modalOpen} handleClose={close} coinName={text}/>}
+            {modalOpen && <ManageProxyModal modalOpen={modalOpen} handleClose={close} proxyName={proxy}/>}
         </AnimatePresence>
         </>
     )
