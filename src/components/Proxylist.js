@@ -25,8 +25,8 @@ function Proxylist() {
             : 
             {overflow: "scroll",
             overflowX: "hidden",
-            overflowY: "hidden"}}>
-                <legend><span className={styles.text}data-text="Proxy">Voting </span>Management</legend>
+            overflowY: "hidden"}} className={styles.fieldset}>
+                <legend><span className={styles.text}>Voting </span>Management</legend>
                 <AddProxy setModal={setModalOpenAddProxy} modalOpen={modalOpenAddProxy}/>
                 {coins.map((coin) =>    
                         <Proxycard key={coin} proxy={selectedProxy} setProxy={setSelectedProxy} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={coin} icon={coinToIcon[coin]}/>

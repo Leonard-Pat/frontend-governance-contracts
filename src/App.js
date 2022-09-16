@@ -20,6 +20,7 @@ const App = () => {
 
   return (
     <>
+
     <div className={styles.background}/>
       <Particles
         id="tsparticles"
@@ -91,7 +92,6 @@ const App = () => {
       />
       <Navsystem />
       <Proxylist/>
-    
       </>
   );
 };

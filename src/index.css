@@ -25,7 +25,28 @@ code {
 }
 
 :root {
-  --color-offwhite: rgb(248, 247, 218);
+  --color-offwhite: #F7F8DA;
   --color-dark:rgb(20,17,20) ;
   --color-teal:#83ddbc;
+}
+
+::selection {
+  background: rgba(131,221,188, 0.3);
+}
+
+
+.MuiDataGrid-cell{
+  color: #F7F8DA;
+  border-left: solid 0.5px #fff;
+  
+}
+.MuiDataGrid-columnHeader{
+  color: #83ddbc;
+  font-family: 'Turret Road';
+}
+
+
+.MuiDataGrid-footerContainer{
+  color: #83ddbc;
+  font-family: 'Turret Road';
 }

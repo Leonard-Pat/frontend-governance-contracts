@@ -1,11 +1,95 @@
 @import '../../index.css';
 
 .modal {
-    height: 462px;
-    width: 963px;
+    position: absolute;
+    height: 651px;
+    width: 520px;
     border: 2px solid var(--color-offwhite);
     background-color: var(--color-dark);
     border-radius: 12px;  
     align-items: center;
-    color: blue;
+    .closeButton {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      .icon {
+          color: var(--color-teal);
+      } 
+      .icon:hover{
+          color: var(--color-offwhite)
+      }
+}
   }
+
+.header {
+    font-family: 'Turret Road', sans-serif;
+    font-weight: 800;
+    color: var(--color-offwhite);
+    margin-top: 10px;
+} 
+
+.textContainer {
+
+    margin: 5% 10%;
+    height: 30%;
+    p {
+        color: #f2f2dc;
+        font-family: 'Turret Road', sans-serif;
+    }
+    .warningText {  
+        font-size: 16px;
+        span {
+            text-decoration: underline;
+            text-decoration-color: var(--color-offwhite);
+            font-style: italic;
+            color: var(--color-teal)
+        }
+    }
+    .mainBody {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 300;
+        
+    }
+}
+
+
+.createWindow {
+    position: absolute;
+    height: 20%;
+    width: 80%;
+    margin: 5% 10%;
+    border: solid 5px red;
+    bottom: 10%;
+
+}
+
+.createButton {
+    position: absolute;
+    bottom: 30px;
+    left:195px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-offwhite);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-color: var(--color-offwhite);
+}
+.createButton:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+  }
+
+.Radio {
+    color:var(--color-offwhite);
+    font-family: 'Turret Road';
+}
+
+Radio{
+    font-family: 'Turret Road';
+}

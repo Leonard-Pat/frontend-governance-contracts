@@ -18,6 +18,8 @@ const scale = {
     opacity: 1,
     transition: {
       duration: 0.2,
+      when: "beforeChildren",
+      staggerChildren: 0.4,
     },
   },
   exit: {
@@ -28,7 +30,8 @@ const scale = {
     },
   },
 };
-  
+
+
 
 const ManageProxyModal = ({ handleClose, proxyName}) => {
 
@@ -42,8 +45,10 @@ const ManageProxyModal = ({ handleClose, proxyName}) => {
             animate="visible"
             exit="exit"
           >
-            <SideNavigation/>
-            <h1>{proxyName}</h1>
+         
+
+            <SideNavigation />
+      
             <button onClick={handleClose}> 
             <GiSplitCross size={25} className={styles.icon} />
             </button>
