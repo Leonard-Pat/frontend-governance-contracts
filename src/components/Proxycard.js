@@ -1,7 +1,6 @@
 import styles from './proxycard.module.scss';
 import { motion, AnimatePresence} from "framer-motion"
 import ManageProxyModal from './ModalManageProxy/ManageProxyModal';
-import { useState, useEffect } from 'react';
 
 
 function Proxycard({setModal, modalOpen, icon, text, proxy, setProxy}) {
@@ -25,13 +24,10 @@ function Proxycard({setModal, modalOpen, icon, text, proxy, setProxy}) {
                 <img src={icon} className={styles.coin} alt='Coin Logo'/>
                 <h1 className={styles.coinName}>{text}</h1>
             </div>
-            <div>
+            <div className={styles.description}>
                     <h1>Price</h1>
+                    <p>Description</p>
             </div>
-            <div>
-                    <h1>Manage</h1>
-            </div>
-
         </motion.div>
         <AnimatePresence
             initial={false}

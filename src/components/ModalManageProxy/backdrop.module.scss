@@ -1,0 +1,15 @@
+.backdrop {
+  position:absolute;
+  top: -85%;
+  left: -13%;
+  width: 125.5%;
+  height: 269%;
+  z-index: 100;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}

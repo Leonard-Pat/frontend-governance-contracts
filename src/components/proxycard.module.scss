@@ -5,49 +5,63 @@
     border-radius: 5px;
     text-align: center;
     backdrop-filter: blur(1px);
-    height: 15%;
-    width: auto;
+    height: 300px;
+    width: 300px;
+    // width: auto;
     margin-top: 10px;
     margin-left: 3%;
     margin-right: 3%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
 
     
 }
 
+.container div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    font-family: 'Turret Road', sans-serif;
+    margin-top: 10px;
+    
+}   
 .coin {
-    width: 45px;
-    height: auto;
+    width: auto;
+    height: 60px;
     margin-left: 4%;
 }
 
 .coinName {
-    margin-left: 30px;
+    margin-left: 40px;
+    margin-top: 20px;
     font-family: 'Turret Road', sans-serif;
     color: #83ddbc;
     letter-spacing: 2px;
 }
-.container div:nth-child(1) {
+
+.container div:nth-child(2){    
     display: flex;
-    align-items: center;
-    margin-left: 3%;
-    margin-right: auto;
+    margin-top: 12%;
+    color:var(--color-offwhite);
     font-family: 'Turret Road', sans-serif;
+    // border: solid 1px red;
+    border-top: solid 1px var(--color-offwhite);
     
-}   
+}
 
-.container div:nth-child(2){
-    margin-right: 50%;
-    color:var(--color-offwhite);
-    font-family: 'Turret Road', sans-serif;
+.description {
+    padding-top: 30px;
+    // border: 1px solid red;
+    width: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
-.container div:nth-child(3){
-    margin-right: 3%;
-    color:var(--color-offwhite);
-    font-family: 'Turret Road', sans-serif;
-}
+
+
+// .container div:nth-child(3){
+//     color:var(--color-offwhite);
+//     font-family: 'Turret Road', sans-serif;
+// }

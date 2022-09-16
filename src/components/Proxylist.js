@@ -21,16 +21,18 @@ function Proxylist() {
     return (
             <fieldset style={
             modalOpenManageProxy || modalOpenAddProxy ?
-            {overflow: 'unset'} 
+            {overflow: 'visible'} 
             : 
             {overflow: "scroll",
-            overflowX: "hidden",
-            overflowY: "hidden"}} className={styles.fieldset}>
+            overflowY: "hidden",
+            overflowX: "hidden"}} className={styles.fieldset}>
                 <legend><span className={styles.text}>Voting </span>Management</legend>
                 <AddProxy setModal={setModalOpenAddProxy} modalOpen={modalOpenAddProxy}/>
+                <div className={styles.proxyCard}>
                 {coins.map((coin) =>    
                         <Proxycard key={coin} proxy={selectedProxy} setProxy={setSelectedProxy} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={coin} icon={coinToIcon[coin]}/>
                     )}
+                </div>
             </fieldset>
     )
         

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import Backdrop from "../BackDrop/Backdrop";
 import styles from "./manageproxy.module.scss"
-import { useState, useEffect } from 'react';
 import { GiSplitCross } from "react-icons/gi";
 import SideNavigation from "./SideNavigation";
+import Backdrop from "./Backdrop"
 
 const scale = {
   hidden: {
