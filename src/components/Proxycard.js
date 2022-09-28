@@ -20,13 +20,19 @@ function Proxycard({setModal, modalOpen, icon, text, proxy, setProxy}) {
         onClick={() =>
             (modalOpen ? close() : open())}
          className={styles.container}>
-            <div>
+            <div className={styles.heading}>
                 <img src={icon} className={styles.coin} alt='Coin Logo'/>
                 <h1 className={styles.coinName}>{text}</h1>
             </div>
             <div className={styles.description}>
-                    <h1>Price</h1>
-                    <p>Description</p>
+                <div className={styles.votingPower}>
+                    <h1>{text} Held: </h1>
+                    <p>0</p>
+                </div>
+                <div  className={styles.tsryStaked}>
+                    <h1>TSRY Staked: </h1>
+                    <p>0</p>
+                </div>
             </div>
         </motion.div>
         <AnimatePresence

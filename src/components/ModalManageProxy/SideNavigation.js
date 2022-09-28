@@ -32,8 +32,8 @@ const SideNavigation = ({}) => {
       <ul className={styles.navbar}>
           <motion.div variants={fade} onClick={() => setSelectMenu(1)} style={selectMenu === 1 ? lightStyle : darkStyle}>General</motion.div>
           <motion.div variants={fade} onClick={() => setSelectMenu(2)} style={selectMenu === 2 ? lightStyle : darkStyle}>Vote</motion.div>
-          <motion.div variants={fade} onClick={() => setSelectMenu(3)} style={selectMenu === 3 ? lightStyle : darkStyle}>Fund Me</motion.div>
-          <motion.div variants={fade} onClick={() => setSelectMenu(4)} style={selectMenu === 4 ? lightStyle : darkStyle}>DeFund Me</motion.div>
+          <motion.div variants={fade} onClick={() => setSelectMenu(3)} style={selectMenu === 3 ? lightStyle : darkStyle}>Fund</motion.div>
+          <motion.div variants={fade} onClick={() => setSelectMenu(4)} style={selectMenu === 4 ? lightStyle : darkStyle}>DeFund</motion.div>
       </ul>
       <div className={styles.tabView}>
       {selectMenu === 1 ?  <h1>Tab1</h1>: <></>} 

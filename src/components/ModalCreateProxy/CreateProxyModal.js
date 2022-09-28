@@ -6,6 +6,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import Select from 'react-select'
+
 
 
 
@@ -46,6 +48,29 @@ const fade = {
     },
 }
 }
+
+
+const options = [
+  { value: 'UNI', label: 'UNI' },
+  { value: 'AAVE', label: 'AAVE' },
+]
+
+const customStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    color: state.isSelected ? '#83ddbc' : '#F7F8DA',
+    backgroundColor: state.isFocused ? "rgba(131,221,188, 0.3)" : null,
+    
+  }),
+     menuList: (provided, state) => ({
+    ...provided,
+    backgroundColor: 'rgb(20,17,20)',
+    border: '1px solid #F7F8DA',
+    borderTop: 'none',
+   
+  }),
+}
+
 
 const CreateProxyModal = ({ handleClose }) => {
 
@@ -97,7 +122,8 @@ const CreateProxyModal = ({ handleClose }) => {
             </p>
           </motion.div>
           <motion.div variants={fade} className={styles.createWindow}>
-            
+          <div className={styles.votingMechanism}>
+            <p>Voting Method: </p>
           <FormControl >
           <RadioGroup className={styles.Radio} row={true}>
                 <FormControlLabel value="On-Chain" control={<Radio  sx={{
@@ -119,8 +145,16 @@ const CreateProxyModal = ({ handleClose }) => {
                       },
                     }} />} label="Off-Chain" />
               </RadioGroup>
-  
-            </FormControl>  
+              </FormControl>  
+          </div>
+          <div className={styles.governanceToken}>
+            <p>Governance Token:</p>
+                  <div style={{width: '300px'}}>
+                <Select styles={customStyles} options={options} />
+                  </div>
+            </div> 
+
+            
           </motion.div>
           <motion.button variants={fade} className={styles.createButton}>
             Create Proxy

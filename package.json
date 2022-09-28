@@ -20,6 +20,7 @@
     "react-icons": "^4.4.0",
     "react-particles": "^2.2.4",
     "react-scripts": "^5.0.1",
+    "react-select": "^5.4.0",
     "sass": "^1.54.9",
     "tsparticles": "^2.2.4",
     "web-vitals": "^2.1.0"
