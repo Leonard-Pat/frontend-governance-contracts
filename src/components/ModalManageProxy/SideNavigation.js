@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import styles from "./sidenavigation.module.scss"
 import { useState } from 'react';
 import VoteTab from './VoteTab';
+import Defund from './Defund';
+import Fund from './Fund';
+import General from './General';
 
 
 const fade = {
@@ -36,10 +39,10 @@ const SideNavigation = ({}) => {
           <motion.div variants={fade} onClick={() => setSelectMenu(4)} style={selectMenu === 4 ? lightStyle : darkStyle}>DeFund</motion.div>
       </ul>
       <div className={styles.tabView}>
-      {selectMenu === 1 ?  <h1>Tab1</h1>: <></>} 
+      {selectMenu === 1 ?  <General></General>: <></>} 
       {selectMenu === 2 ? <VoteTab></VoteTab> : <></>} 
-      {selectMenu === 3 ? <h1>Tab3</h1> : <></>} 
-      {selectMenu === 4 ? <h1>Tab4</h1> : <></>} 
+      {selectMenu === 3 ? <Fund></Fund> : <></>} 
+      {selectMenu === 4 ? <Defund></Defund> : <></>} 
       </div>
       
       </>

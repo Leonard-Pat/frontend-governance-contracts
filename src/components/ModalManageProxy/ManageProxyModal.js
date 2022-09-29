@@ -48,7 +48,7 @@ const ManageProxyModal = ({ handleClose, proxyName}) => {
 
             <SideNavigation />
       
-            <button onClick={handleClose}> 
+            <button class={styles.closeButton} onClick={handleClose}> 
             <GiSplitCross size={25} className={styles.icon} />
             </button>
           </motion.div>
