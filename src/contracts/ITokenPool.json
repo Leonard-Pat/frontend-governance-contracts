@@ -1,0 +1,373 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "fundProxy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "stakeToEarn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "53": "contracts/interfaces/ITokenPool.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/ITokenPool.sol",
+    "exportedSymbols": {
+      "ITokenPool": [
+        3789
+      ]
+    },
+    "id": 3790,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3768,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:53"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITokenPool",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3789,
+        "linearizedBaseContracts": [
+          3789
+        ],
+        "name": "ITokenPool",
+        "nameLocation": "723:10:53",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 3769,
+              "nodeType": "StructuredDocumentation",
+              "src": "745:165:53",
+              "text": " @dev Allows user to stake GT in return for TSRY\n Param uint - Amount of GT they want to stake\n Param address - The address of the GT"
+            },
+            "functionSelector": "5795dc8b",
+            "id": 3776,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "stakeToEarn",
+            "nameLocation": "924:11:53",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3771,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3776,
+                  "src": "936:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3770,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "936:7:53",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3773,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3776,
+                  "src": "945:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "945:7:53",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "935:18:53"
+            },
+            "returnParameters": {
+              "id": 3775,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "962:0:53"
+            },
+            "scope": 3789,
+            "src": "915:48:53",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3777,
+              "nodeType": "StructuredDocumentation",
+              "src": "969:227:53",
+              "text": " @dev Transfer GT to the proxies \n Param uint - Amount to be transfered\n Param address - Address of governance token\n Param address - Address of the user\n Param uint256 - TSRY price (testing)"
+            },
+            "functionSelector": "6f4106e0",
+            "id": 3788,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fundProxy",
+            "nameLocation": "1210:9:53",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3779,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3788,
+                  "src": "1221:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3778,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1221:7:53",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3781,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3788,
+                  "src": "1230:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3780,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1230:7:53",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3783,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3788,
+                  "src": "1239:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3782,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1239:7:53",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3785,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3788,
+                  "src": "1247:7:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3784,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1247:7:53",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1219:36:53"
+            },
+            "returnParameters": {
+              "id": 3787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1264:0:53"
+            },
+            "scope": 3789,
+            "src": "1201:64:53",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3790,
+        "src": "713:556:53",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:1230:53"
+  },
+  "bytecode": "",
+  "bytecodeSha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.15+commit.e14f2714"
+  },
+  "contractName": "ITokenPool",
+  "coverageMap": {
+    "branches": {},
+    "statements": {}
+  },
+  "dependencies": [],
+  "deployedBytecode": "",
+  "deployedSourceMap": "",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {
+      "fundProxy(uint256,address,address,uint256)": {
+        "details": "Transfer GT to the proxies  Param uint - Amount to be transfered Param address - Address of governance token Param address - Address of the user Param uint256 - TSRY price (testing)"
+      },
+      "stakeToEarn(uint256,address)": {
+        "details": "Allows user to stake GT in return for TSRY Param uint - Amount of GT they want to stake Param address - The address of the GT"
+      }
+    },
+    "version": 1
+  },
+  "offset": [
+    713,
+    1269
+  ],
+  "opcodes": "",
+  "pcMap": {},
+  "sha1": "4bfecaad6a4b2be4aeb1f406307b2354d1ab3e05",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.12;\n\n/*\n\n ___  ________   _________  _______   ________  ________ ________  ________  _______      \n|\\  \\|\\   ___  \\|\\___   ___\\\\  ___ \\ |\\   __  \\|\\  _____\\\\   __  \\|\\   ____\\|\\  ___ \\     \n\\ \\  \\ \\  \\\\ \\  \\|___ \\  \\_\\ \\   __/|\\ \\  \\|\\  \\ \\  \\__/\\ \\  \\|\\  \\ \\  \\___|\\ \\   __/|    \n \\ \\  \\ \\  \\\\ \\  \\   \\ \\  \\ \\ \\  \\_|/_\\ \\   _  _\\ \\   __\\\\ \\   __  \\ \\  \\    \\ \\  \\_|/__  \n  \\ \\  \\ \\  \\\\ \\  \\   \\ \\  \\ \\ \\  \\_|\\ \\ \\  \\\\  \\\\ \\  \\_| \\ \\  \\ \\  \\ \\  \\____\\ \\  \\_|\\ \\ \n   \\ \\__\\ \\__\\\\ \\__\\   \\ \\__\\ \\ \\_______\\ \\__\\\\ _\\\\ \\__\\   \\ \\__\\ \\__\\ \\_______\\ \\_______\\\n    \\|__|\\|__| \\|__|    \\|__|  \\|_______|\\|__|\\|__|\\|__|    \\|__|\\|__|\\|_______|\\|_______|\n\n\n*/\n\n\ninterface ITokenPool {\n    \n    /**\n    * @dev Allows user to stake GT in return for TSRY\n    *\n    * Param uint - Amount of GT they want to stake\n    * Param address - The address of the GT\n    */\n    function stakeToEarn(uint256, address) external;\n\n    /**\n    * @dev Transfer GT to the proxies \n    * Param uint - Amount to be transfered\n    * Param address - Address of governance token\n    * Param address - Address of the user\n    * Param uint256 - TSRY price (testing)\n    */\n    function fundProxy( uint256, address, address,uint256) external;\n\n\n}",
+  "sourceMap": "",
+  "sourcePath": "contracts/interfaces/ITokenPool.sol",
+  "type": "interface"
+}

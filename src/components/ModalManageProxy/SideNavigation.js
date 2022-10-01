@@ -27,7 +27,7 @@ const fade = {
     const darkStyle = {
       backgroundColor:'rgb(20,17,20)', color:'rgb(248, 247, 218)'
     }
-const SideNavigation = ({}) => {
+const SideNavigation = ({proxyAddress, proxyName}) => {
 
     const[selectMenu, setSelectMenu] = useState(1);
     return (
@@ -39,10 +39,10 @@ const SideNavigation = ({}) => {
           <motion.div variants={fade} onClick={() => setSelectMenu(4)} style={selectMenu === 4 ? lightStyle : darkStyle}>DeFund</motion.div>
       </ul>
       <div className={styles.tabView}>
-      {selectMenu === 1 ?  <General></General>: <></>} 
-      {selectMenu === 2 ? <VoteTab></VoteTab> : <></>} 
-      {selectMenu === 3 ? <Fund></Fund> : <></>} 
-      {selectMenu === 4 ? <Defund></Defund> : <></>} 
+      {selectMenu === 1 ?  <General proxyName={proxyName} proxyAddress={proxyAddress}></General>: <></>} 
+      {selectMenu === 2 ? <VoteTab proxyAddress={proxyAddress}></VoteTab> : <></>} 
+      {selectMenu === 3 ? <Fund proxyAddress={proxyAddress}></Fund> : <></>} 
+      {selectMenu === 4 ? <Defund proxyAddress={proxyAddress}></Defund> : <></>} 
       </div>
       
       </>

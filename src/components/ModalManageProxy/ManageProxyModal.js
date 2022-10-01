@@ -32,7 +32,7 @@ const scale = {
 
 
 
-const ManageProxyModal = ({ handleClose, proxyName}) => {
+const ManageProxyModal = ({ handleClose, proxyName, proxyAddress}) => {
 
     return (
       <Backdrop onClick={handleClose}>
@@ -46,9 +46,9 @@ const ManageProxyModal = ({ handleClose, proxyName}) => {
           >
          
 
-            <SideNavigation />
+            <SideNavigation proxyName={proxyName} proxyAddress={proxyAddress} />
       
-            <button class={styles.closeButton} onClick={handleClose}> 
+            <button className={styles.closeButton} onClick={handleClose}> 
             <GiSplitCross size={25} className={styles.icon} />
             </button>
           </motion.div>

@@ -10,7 +10,7 @@
 
 .fundMe{
     border: 1px solid var(--color-offwhite);
-    height: 360px;
+    height: 400px;
     width: 40%;
     position: absolute;
     top: 150px;
@@ -25,7 +25,7 @@
 
 .delegate{
     border: 1px solid var(--color-offwhite);
-    height: 360px;
+    height: 400px;
     width: 40%;
     position: absolute;
     top: 150px;
@@ -48,3 +48,45 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+  
+  .inputProposal {
+      position: absolute;
+      height: auto;
+      width: 200px;
+      bottom: 150px;
+      left: 90px;
+  }
+
+.inputTsry {
+    position: absolute;
+    height: auto;
+    width: 200px;
+    bottom: 80px;
+    left: 90px;
+}
+
+.fundButton {
+    position: absolute;
+    bottom: 20px;
+    left: 135px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-offwhite);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-color: var(--color-offwhite);
+}
+.fundButton:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+ }
+
+ .inputsAddress {
+    position: absolute;
+    height: auto;
+    bottom: 120px;
+    left: 20px;
+}
+

@@ -3,7 +3,7 @@ import styles from './addproxy.module.scss';
 import { motion, AnimatePresence } from "framer-motion"
 import CreateProxyModal from './ModalCreateProxy/CreateProxyModal';
 
-function AddProxy({setModal, modalOpen}) {
+function AddProxy({setModal, modalOpen, addProxy}) {
 
 
     const close = () => setModal(false);
@@ -23,7 +23,7 @@ function AddProxy({setModal, modalOpen}) {
         <AnimatePresence
             initial={false}
             onExitComplete={() => null}>
-            {modalOpen && <CreateProxyModal modalOpen={modalOpen} handleClose={close}/>}
+            {modalOpen && <CreateProxyModal addProxy={addProxy} modalOpen={modalOpen} handleClose={close}/>}
         </AnimatePresence>
         </>
     );

@@ -2,22 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { DAppProvider, Goerli } from '@usedapp/core'
-import { getDefaultProvider } from 'ethers'
+import {
+  WagmiConfig,
+  createClient,
+  configureChains,
+  chain,
+} from 'wagmi'
 
-const config = {
-  readOnlyChainId: Goerli.chainId,
-  readOnlyUrls: {
-    [Goerli.chainId]: getDefaultProvider('goerli'),
-  },
-}
+import { alchemyProvider } from 'wagmi/providers/alchemy'
+import { publicProvider } from 'wagmi/providers/public'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+
+
+const { chains, provider } = configureChains([chain.goerli], [
+  alchemyProvider({ apiKey: '33CyeLi1BoHljETDGX3ThJ-7V1yeZmKD' }),
+  publicProvider(),
+])
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors: [new InjectedConnector({ chains })],
+  provider,
+})
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-      <DAppProvider config={config}>
+        <WagmiConfig client={wagmiClient}>
           <App />
-  </DAppProvider>
+        </WagmiConfig>
 </>
 );
 

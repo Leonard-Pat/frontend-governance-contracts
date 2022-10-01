@@ -1,15 +1,73 @@
+
+@import '../../index.css';
+
+.title{
+    font-family: 'Turret Road', sans-serif;
+    color: var(--color-offwhite);
+    margin-top: 20px;
+    font-size: 40px;
+    margin-right: 15px;
+}
+
+.vote {
+    position: relative;
+    margin: 0 6%;
+    margin-top: 1%;
+    height: 30%;
+}
+
+.text {
+    font-family: 'Turret Road', sans-serif;
+    color: var(--color-offwhite);
+    font-size: 16px;
+    text-align: justify;
+    span {
+        text-decoration: underline;
+        text-decoration-color: var(--color-offwhite);
+        font-style: italic;
+        color: var(--color-teal)
+    }
+}
+
+.inputProposal {
+    position: absolute;
+    bottom: 44px;
+    left: -1px;
+}
+
+.voteOption{
+    position: absolute;
+    right: -1px;
+    bottom: 56px;
+    font-family: 'Turret Road', sans-serif;
+    color: var(--color-offwhite);
+    font-size: 16px;
+    text-align: justify;
+}
+
+.castVote {
+    cursor: pointer;
+    position: absolute;
+    bottom: -18px;
+    left: 374px;
+    background-color: transparent;
+    color: var(--color-offwhite);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-color: var(--color-offwhite);
+}
+.castVote:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+  }
+
+
 .grid{
     position: absolute;
     bottom: 2%;
     left: 2.5%;
     height: 50%;
     width: 95%;
-}
-
-.vote {
-    position: relative;
-    border: 1px solid red;
-    margin: 0 6%;
-    margin-top: 2%;
-    height: 40%;
 }

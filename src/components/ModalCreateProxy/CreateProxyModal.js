@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Backdrop from "../BackDrop/Backdrop";
 import styles from "./createproxy.module.scss"
 import { GiSplitCross } from "react-icons/gi";
@@ -7,9 +8,15 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from 'react-select'
+import {   usePrepareContractWrite,
+  useContractWrite,
+  useAccount
+ } from 'wagmi'
+ import factoryABI from '../../contracts/VoteProxyFactory.json'
+ import { ethers } from "ethers";
 
 
-
+const factoryAbi = factoryABI.abi
 
 const scale = {
   hidden: {
@@ -49,7 +56,6 @@ const fade = {
 }
 }
 
-
 const options = [
   { value: 'UNI', label: 'UNI' },
   { value: 'AAVE', label: 'AAVE' },
@@ -71,8 +77,59 @@ const customStyles = {
   }),
 }
 
+const CreateProxyModal = ({ handleClose, addProxy }) => {
 
-const CreateProxyModal = ({ handleClose }) => {
+  const { address  } = useAccount()
+  
+  const [selectedOption, setSelectedOption] = useState();
+  const tokenToGovernance = {
+    'UNI': true,
+    'AAVE': false
+  } 
+
+  const tokenToAddress = {
+    'UNI': '0xe69F12238C350115Bc067D743C2b147613Fe7924',
+    'AAVE': '0x646B3906808892f9876e8E60fa8513C51a4F302c'
+  }
+  
+  const tokenPoolAddress = '0xa404b1F6654a309a62d7501c9F93D717fee5a12B'
+
+  const { config } = usePrepareContractWrite({
+    addressOrName: '0xaE567e68ac0078db460E1ACB741c9Fc334970299',
+    contractInterface: factoryAbi,
+    functionName: 'createERC20VotesProxy',
+    args: [tokenToAddress[selectedOption], tokenPoolAddress, tokenToGovernance[selectedOption]],
+    chainId: 5,
+  })
+
+  const {writeAsync} = useContractWrite(config)
+
+
+
+  const provider = new ethers.providers.WebSocketProvider(
+    `wss://eth-goerli.g.alchemy.com/v2/33CyeLi1BoHljETDGX3ThJ-7V1yeZmKD`
+  )
+  
+  
+  const contract = new ethers.Contract('0xaE567e68ac0078db460E1ACB741c9Fc334970299', factoryAbi, provider)
+
+  contract.on('VoteProxyDeployed', (proxy, _governanceToken, event) => {
+    let info = {
+      proxyAddress: proxy,
+      governanceToken: _governanceToken,
+      data: event,
+    }
+    localStorage.setItem(`${selectedOption}`, info.proxyAddress)
+  })
+
+  const handleCreate = async () => {
+    await writeAsync?.().then(() => {
+      addProxy(selectedOption)
+      handleClose()
+    })
+    
+  }
+    
 
 
     return (
@@ -150,13 +207,13 @@ const CreateProxyModal = ({ handleClose }) => {
           <div className={styles.governanceToken}>
             <p>Governance Token:</p>
                   <div style={{width: '300px'}}>
-                <Select styles={customStyles} options={options} />
+                <Select onChange={(e) =>{setSelectedOption(e.value)}} styles={customStyles} options={options} />
                   </div>
             </div> 
 
             
           </motion.div>
-          <motion.button variants={fade} className={styles.createButton}>
+          <motion.button variants={fade} className={styles.createButton} onClick={handleCreate}>
             Create Proxy
           </motion.button>
         </motion.div>
