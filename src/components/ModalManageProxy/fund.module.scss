@@ -68,6 +68,24 @@
 .fundButton {
     position: absolute;
     bottom: 20px;
+    left: 230px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-offwhite);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-color: var(--color-offwhite);
+}
+.fundButton:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+ }
+
+ .delegateButton {
+    position: absolute;
+    bottom: 20px;
     left: 135px;
     cursor: pointer;
     background-color: transparent;
@@ -78,6 +96,24 @@
     border-color: var(--color-offwhite);
 }
 .fundButton:hover{
+    cursor: pointer;
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+ }
+
+ .approveButton {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-offwhite);
+    font-family: 'Turret Road', sans-serif;
+    font-size: 16px;
+    padding: 10px 10px;
+    border-color: var(--color-offwhite);
+}
+.approveButton:hover{
     cursor: pointer;
     border-color: var(--color-teal);
     color: var(--color-teal);

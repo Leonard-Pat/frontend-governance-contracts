@@ -72,10 +72,11 @@ function Fund({proxyAddress}) {
 
 
     const handleStake = async () => {
-        await approveTx.writeAsync?.().then(async () => 
-        await fundMeTx.writeAsync?.() 
-        )
-        
+        await fundMeTx.writeAsync?.()
+    }
+
+    const handleApprove = async () => {
+        await approveTx.writeAsync?.()
     }
 
     const handleDelegateCall = async () => {
@@ -92,9 +93,9 @@ function Fund({proxyAddress}) {
         </h1>
         <p className={styles.text}>
             This window funds the proxy with the your DAO's appropriate token.
-            To fund the proxy however it requires you to stake TSRY. The amount funded 
-            will therefore correspond to the current exchange rate of TSRY/Token. Please also
-            enter a valid proposal ID.
+            To fund the proxy however it requires you to stake TSRY and enter a valid proposal ID. The amount funded 
+            will therefore correspond to the current exchange rate of TSRY/Token. Please approve the transaction 
+            before depositing.
         </p>
         <div className={styles.inputProposal}>
         <ThemeProvider theme={darkTheme}>
@@ -115,6 +116,9 @@ function Fund({proxyAddress}) {
         <button className={styles.fundButton} onClick={() => handleStake()}>
             Fund Proxy
           </button>
+          <button className={styles.approveButton} onClick={() => handleApprove()}>
+            Approve 
+          </button>
     </div>
     <div className={styles.delegate}>
         <h1>
@@ -134,7 +138,7 @@ function Fund({proxyAddress}) {
         variant="outlined" sx={{ input: { color: '#F7F8DA', width:'300px' } }}/>
     </ThemeProvider>
         </div>
-        <button className={styles.fundButton} onClick={handleDelegateCall} >
+        <button className={styles.delegateButton} onClick={handleDelegateCall} >
             Delegate Votes
         </button>
 
