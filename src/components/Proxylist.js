@@ -45,8 +45,8 @@ function Proxylist() {
                 <AddProxy addProxy={setAddProxy} setModal={setModalOpenAddProxy} modalOpen={modalOpenAddProxy}/>
                 <div className={styles.proxyCard}>
                 
-                <Proxycard address={'0xaC42BCC3fD4748992bff99c95126FB2323eABb71'} proxy={selectedProxy} setProxy={setSelectedProxy} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={'AAVE'} icon={coinToIcon['AAVE']}/>
-                {/* { coinList.length === 0 ? <h1 className={styles.noProxy}>
+                {/* <Proxycard address={'0xaC42BCC3fD4748992bff99c95126FB2323eABb71'} proxy={selectedProxy} setProxy={setSelectedProxy} setModal={setModalOpenManageProxy} modalOpen={modalOpenManageProxy} text={'AAVE'} icon={coinToIcon['AAVE']}/> */}
+                { coinList.length === 0 ? <h1 className={styles.noProxy}>
                     You have no proxies to manage<br></br> Please create new proxy</h1> :
                 coinList.map((coin) =>    
                         <Proxycard address={localStorage.getItem(coin)} 
@@ -56,7 +56,7 @@ function Proxylist() {
                         modalOpen={modalOpenManageProxy} 
                         text={coin} 
                         icon={coinToIcon[coin]}/>
-                    )} */}
+                    )}
                 </div>
             </fieldset>
     )

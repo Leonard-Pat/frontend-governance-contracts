@@ -7,7 +7,6 @@ import { usePrepareContractWrite, useContractWrite } from 'wagmi'
 import { BigNumber } from 'ethers';
 import TextField from '@mui/material/TextField';
 import voteproxyabi from '../../contracts/VoteProxyERC20Votes.json';
-import Web3 from "web3";
 
 const voteProxyABI = voteproxyabi.abi
 
@@ -62,13 +61,13 @@ const columns = [
 const VoteTab = ({proxyAddress}) => {
 
   const [selectedVote, setSelectedVote] = useState();
-  const [proposalID, setProposalID] = useState('0x1')
+  const [proposalID, setProposalID] = useState('0')
 
   const { config } = usePrepareContractWrite({
     addressOrName: proxyAddress,
     contractInterface: voteProxyABI,
     functionName: 'proxyVote',
-    args: [selectedVote, Web3.utils.hexToNumber(proposalID)],
+    args: [selectedVote, BigNumber.from(proposalID)],
     chainId: 5,
   })
   
@@ -79,7 +78,7 @@ const VoteTab = ({proxyAddress}) => {
   }
 
   const handleProposalId = (id) => {
-    setProposalID('0x' + id)
+    setProposalID(id)
   }
 
 

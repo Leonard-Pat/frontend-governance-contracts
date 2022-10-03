@@ -27,13 +27,13 @@ function Fund({proxyAddress}) {
 
     const [stakeAmount, setStakeAmount] = useState('0')
     const [delegateAddress, setDelegate] = useState('')
-    const [proposalID, setProposalID] = useState('0x')
+    const [proposalID, setProposalID] = useState('0')
 
     const prepareFundMe = usePrepareContractWrite({
         addressOrName: proxyAddress,
         contractInterface: voteProxyABI,
         functionName: 'fundMe',
-        args: [ Web3.utils.toWei(stakeAmount, 'ether'), Web3.utils.hexToNumber(proposalID), tsryPrice],
+        args: [ Web3.utils.toWei(stakeAmount, 'ether'), BigNumber.from(proposalID), tsryPrice],
         chainId: 5,
       })
     
@@ -67,7 +67,7 @@ function Fund({proxyAddress}) {
     }
 
     const handleProposalID= (val) => {
-        setProposalID('0x' + val)
+        setProposalID(val)
     }
 
 
